@@ -7,5 +7,6 @@ Description<%= @item.description %>
 <h1>Prix : <%= @item.price %> euros /jour</h1>
 
 <div>
-<%= image_tag @item.pictures_url, size: "400x400" %>
+<%= image_tag @item.picture.url(:medium) %>
+
 </div>
