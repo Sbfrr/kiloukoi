@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+10.times do
+  Item.create(price: 10 , pictures_url: "www.google.fr/image/1" , description: "vélo bleu et rouge" , title: "vélo" ,location: "paris" )
+end

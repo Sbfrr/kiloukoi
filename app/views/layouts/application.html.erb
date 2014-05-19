@@ -19,22 +19,20 @@
 <body>
 
 <div class="container">
-
-<ul class="nav nav-tabs nav-justified">
-  <li class><%= link_to "Accueil" %></li>
-  <li><%= link_to 'Créer une nouvelle annonce' %></li>
-  <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      Listing de annonces <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu">
-      <li> Appartement Paris </li>
-      <li> Lit 160cm </li>
-      <li> Paire de ski </li>
-    </ul>
-  </li>
-</ul>
-
+  <ul class="nav nav-tabs nav-justified">
+    <li class><%= link_to "Accueil", root_path %></li>
+    <li><%= link_to 'Créer une nouvelle annonce', new_item_path %></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        Listing de annonces <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <% @items_list.each do |item| %>
+        <li><%= link_to item.title, item_path(item) %></li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
 <%= yield %>
 
 </div>
