@@ -1,2 +1,21 @@
 <h1>Bienvenue sur Kiloukoi</h1>
-<p></p>
+
+<% @items.each do |item| %>
+
+<div class="row">
+  <div class="col-sm-12 col-md-12 text-center">
+    <div class="thumbnail">
+      <%= image_tag item.pictures_url, size:'500x300', alt:'mon item' %>
+      <div class="caption">
+        <h3><%= link_to item.title, item_path(item) %></h3>
+        <p><%= link_to item.description, item_path(item) %></p>
+        <p>
+          <button class="btn btn-default"> <%= link_to "Supprimer", item_path(item), method: "delete", confirm: "Tu es sûr ?" %></button>
+          <button class="btn btn-default"> <%= link_to "Mettre à jour", edit_item_path(item) %></button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>

@@ -1,2 +1,11 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<h1>Le titre de mon annonce est : <%= @item.title %></h1>
+
+<p>
+Description<%= @item.description %>
+</p>
+
+<h1>Prix : <%= @item.price %> euros /jour</h1>
+
+<div>
+<%= image_tag @item.pictures_url, size: "400x400" %>
+</div>
