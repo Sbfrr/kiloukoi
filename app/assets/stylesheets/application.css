@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+ .logo{
+  font-family: HoboStd;
+  font-size: 32px;
+  color: #0EA2E1;
+  line-height: 40px;
+  padding-top: 0.8%;
+  padding-left: 1%;
+}
+
+.align-nav{
+  padding-right: 15px;
+}
+
+.align-body{
+  margin-top: 50px;
+}
+
+.carte{
+  height: 100%;
+  width: 30%;
+  position: fixed;
+}
+
+.flux{
+  height: 100%;
+  width: 57%;
+  float: right;
+}
+
