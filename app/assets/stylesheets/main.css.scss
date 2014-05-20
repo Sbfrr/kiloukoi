@@ -3,8 +3,8 @@
   font-size: 32px;
   color: #0EA2E1;
   line-height: 40px;
-  padding-top: 0.8%;
-  padding-left: 1%;
+  padding-top: 7px;
+  padding-left: 7px;
 }
 
 .align-nav{
@@ -16,14 +16,36 @@
 }
 
 .carte{
-  height: 100%;
-  width: 30%;
+  width: inherit;
   position: fixed;
 }
 
-.flux{
-  height: 100%;
-  width: 57%;
-  float: right;
+.annonce{
+  width: 100%;
+
 }
 
+.white{
+  color: white;
+}
+
+#button_loc{
+  margin: 5px;
+  width: 96%;
+}
+
+#button_loc_valide{
+  width: 50%;
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+/* @media (min-width: @screen-sm-min) { ... } */
+
+/* Medium devices (desktops, 992px and up) */
+/* @media (min-width: @screen-md-min) { ... } */
+
+/* Large devices (large desktops, 1200px and up) */
+/* @media (min-width: @screen-lg-min) { ... } */
