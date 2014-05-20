@@ -1,20 +1,31 @@
-<%= form_for @item do |form| %>
+<%= form_for @item do |f| %>
   <div class="form-group">
-    <%= form.label :title, 'Titre', class: "control-label" %>
-    <%= form.text_field :title, class: "form-control", placeholder: "Titre" %>
+    <%= f.label :title, 'Titre', class: "control-label" %>
+    <%= f.text_field :title, class: "form-control", placeholder: "Titre" %>
   </div>
   <div class="form-group">
-    <%= form.label :description, 'Description', class: "control-label" %>
-    <%= form.text_field :description, class: "form-control", placeholder: "Description" %>
+    <%= f.label :description, 'Description', class: "control-label" %>
+    <%= f.text_field :description, class: "form-control", placeholder: "Description" %>
   </div>
   <div class="form-group">
-    <%= form.label :price, 'Prix', class: "control-label" %>
-    <%= form.text_field :price, class: "form-control", placeholder: "Prix" %>
+    <%= f.label :price, 'Prix', class: "control-label" %>
+    <%= f.text_field :price, class: "form-control", placeholder: "Prix" %>
   </div>
+
   <div class="form-group">
-    <%= form.label :location, 'localisation', class: "control-label" %>
-    <%= form.text_field :location, class: "form-control", placeholder: "Localisation" %>
+    <%= f.label :location, 'localisation', class: "control-label" %>
+    <%= f.text_field :location, class: "form-control", placeholder: "Localisation" %>
   </div>
-  <%= form.submit "Valider", class: "btn btn-primary" %>
+
+  <% @item.pictures.each do |picture|%>
+  <%= image_tag picture.file.url(:thumb) %>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :file, 'picture', class: "control-label" %>
+    <%= f.file_field :file, class: "form-control", placeholder: "Localisation" %>
+  </div>
+
+  <%= f.submit "Valider", class: "btn btn-primary" %>
 
 <% end %>

@@ -1,6 +1,4 @@
 class ItemsController < ApplicationController
- before_action :find_all_items
-
  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -16,21 +14,16 @@ class ItemsController < ApplicationController
 
   def create
     item = Item.create(item_params)
+    item.pictures.create(picture_params)
     redirect_to item_path(item)
   end
 
-  def find_all_items
-    @items_list = Item.all
-  end
-
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
-    @item.update!(item_params)
-
-    #flash [:info] = "Tu viens de mettre à jour ton annonce #{@item.title}"
-
+    @item = Item.find(params[:id]).update!(item_params)
     redirect_to item_path(@item)
   end
 
@@ -43,6 +36,10 @@ private
 
   def item_params
     @item_params = params.require(:item).permit(:price, :description, :title, :location)
+  end
+
+  def picture_params
+    params.require(:item).permit(:file)
   end
 
   def set_item
