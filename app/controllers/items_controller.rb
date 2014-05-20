@@ -16,9 +16,12 @@ class ItemsController < ApplicationController
 
   def create
     item = Item.create(item_params)
-    photos = params.require(:photos)
-
-
+    if params[:photos]
+      photos = params.require(:photos)
+      photos.each do |pic|
+        item.pictures.create({photo: pic})
+      end
+    end
     redirect_to item_path(item)
   end
 

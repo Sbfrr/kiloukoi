@@ -5,7 +5,7 @@
 <div class="row">
   <div class="col-sm-12 col-md-12 text-center">
     <div class="thumbnail">
-    <%= image_tag item.picture.url(:medium), alt:'mon item' %>
+    <%= image_tag item.pictures, alt:'mon item' %>
       <div class="caption">
         <h3><%= link_to item.title, item_path(item) %></h3>
         <p><%= link_to item.description, item_path(item) %></p>

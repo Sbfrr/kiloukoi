@@ -7,6 +7,8 @@ Description<%= @item.description %>
 <h1>Prix : <%= @item.price %> euros /jour</h1>
 
 <div>
-<%= image_tag @item.picture.url(:medium) %>
+<% @item.pictures.each do |pic| %>
+<%= image_tag pic.photo.url(:medium) %>
+<% end %>
 
 </div>
