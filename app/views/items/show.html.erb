@@ -1,7 +1,9 @@
 <h1>Le titre de mon annonce est : <%= @item.title %></h1>
 
-<p>
-Description<%= @item.description %>
-</p>
 
-<h1>Prix : <%= @item.price %> euros /jour</h1>
+<% @item.pictures.each do |picture|%>
+<%= image_tag picture.file.url(:medium) %>
+<% end %>
+
+
+

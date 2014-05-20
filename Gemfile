@@ -33,4 +33,6 @@ gem 'figaro'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk'
 
-
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'remotipart', '~> 1.2'
