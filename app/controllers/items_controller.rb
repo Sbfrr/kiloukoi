@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
  before_action :set_item, only: [:show, :edit, :update, :destroy]
+ respond_to :js, :html
+
 
   def index
     @items = Item.all
@@ -23,8 +25,14 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item = Item.find(params[:id]).update!(item_params)
-    redirect_to item_path(@item)
+    item = Item.find(params[:id])
+    item.update(item_params)
+    item.pictures.create(picture_params)
+
+    respond_with do |format|
+      format.js
+      format.html { redirect_to flat_path(flat)}
+    end
   end
 
   def destroy

@@ -1,4 +1,4 @@
-<%= form_for @item do |f| %>
+<%= form_for @item, :html => { :multipart => true}, remote: true do |f| %>
   <div class="form-group">
     <%= f.label :title, 'Titre', class: "control-label" %>
     <%= f.text_field :title, class: "form-control", placeholder: "Titre" %>
@@ -17,9 +17,9 @@
     <%= f.text_field :location, class: "form-control", placeholder: "Localisation" %>
   </div>
 
-  <% @item.pictures.each do |picture|%>
-  <%= image_tag picture.file.url(:thumb) %>
-  <% end %>
+  <div id='picture-container'>
+   <%= render partial: 'pictures' %>
+  </div>
 
   <div class="form-group">
     <%= f.label :file, 'picture', class: "control-label" %>
