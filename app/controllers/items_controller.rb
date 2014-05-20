@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
  before_action :find_all_items
 
  before_action :set_item, only: [:show, :edit, :update, :destroy]
+ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @items = Item.all

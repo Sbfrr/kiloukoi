@@ -33,4 +33,6 @@ gem 'figaro'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk'
 
+gem 'devise'
+
 
