@@ -16,6 +16,9 @@ class ItemsController < ApplicationController
 
   def create
     item = Item.create(item_params)
+    photos = params.require(:photos)
+
+
     redirect_to item_path(item)
   end
 
@@ -42,7 +45,7 @@ class ItemsController < ApplicationController
 private
 
   def item_params
-    @item_params = params.require(:item).permit(:price, :pictures_url, :description, :title, :location, :picture)
+    @item_params = params.require(:item).permit(:price, :description, :title, :location)
   end
 
   def set_item

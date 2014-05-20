@@ -3,26 +3,27 @@
     <%= form.label :title, 'Titre', class: "control-label" %>
     <%= form.text_field :title, class: "form-control", placeholder: "Titre" %>
   </div>
+
   <div class="form-group">
     <%= form.label :description, 'Description', class: "control-label" %>
     <%= form.text_field :description, class: "form-control", placeholder: "Description" %>
   </div>
+
   <div class="form-group">
     <%= form.label :price, 'Prix', class: "control-label" %>
     <%= form.text_field :price, class: "form-control", placeholder: "Prix" %>
   </div>
+
   <div class="form-group">
     <%= form.label :location, 'localisation', class: "control-label" %>
     <%= form.text_field :location, class: "form-control", placeholder: "Localisation" %>
   </div>
-  <div class="form-group">
-    <%= form.label :pictures_url, 'Insert une image', class: "control-label" %>
-    <%= form.text_field :pictures_url, class: "form-control", placeholder: "Image" %>
-  </div>
+
   <div class="field">
     <%= form.label :picture %><br>
-    <%= form.file_field :picture %>
+    <%= file_field_tag "photos[]", type: :file, multiple: true %>
   </div>
+
   <%= form.submit "Valider", class: "btn btn-primary" %>
 
 <% end %>
