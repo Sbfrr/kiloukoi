@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :pictures
+
   root 'items#index'
   resources :items
 
