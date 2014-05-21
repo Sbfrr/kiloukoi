@@ -1,9 +1,61 @@
-<div class="carte">
-    <%= image_tag("carte.png")%>
+<div class="col-md-5 visible-lg visible-md">
+  <%= image_tag("carte.png", class: "carte") %>
 </div>
 
-<div class="flux">
-  <div class="col-md-8 col-md-offset-2">
+<div class="col-md-7 col-md-offset-5 ">
+  <div class="col-sm-12 col-md-12 col-xs-12">
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group ">
+        <input type="text" class="form-control" id="button_loc" placeholder="Localisation">
+      </div>
+      <button type="submit" class="btn btn-primary col-xs-offset-3 col-sm-offset-2 col-md-offset-0" id="button_loc_valide">Valider</button>
+    </form>
+  </div>
+
+  <div >
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+    <%= render 'items/annonce' %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row">
+  <div class="col-md-5 visible-lg visible-md">
+    <%= image_tag("carte.png", class: "carte") %>
+  </div>
+  <div class="col-md7 text-center">
     <form class="navbar-form navbar-left thumbnail" role="location">
       <div class="form-group">
         <label for="location"> Entrez une localisation : </label>
@@ -12,20 +64,14 @@
       <button type="submit" class="btn btn-default">Je valide</button>
     </form>
   </div>
-<% @items.each do |item| %>
-  <div class="col-sm-6 col-md-6">
-    <div class="thumbnail">
-      <div class="caption">
-        <h3><%= link_to item.title, item_path(item) %></h3>
-        <p><%= link_to item.description, item_path(item) %></p>
-        <p>
-          <button class="btn btn-default"> <%= link_to "Supprimer", item_path(item), method: "delete", confirm: "Tu es sûr ?" %></button>
-          <button class="btn btn-default"> <%= link_to "Mettre à jour", edit_item_path(item) %></button>
-        </p>
-      </div>
+  <div class=" col-md-6 col-md-offset-5 col-sm-6 col-sm-offset-7 col-xs-8 col-xs-offset-7">
+    <div class="thumbnail col-sm-6 col-md-6 col-xs-12">
+      titre
     </div>
   </div>
-<% end %>
+
+-->
+
 
 
 
