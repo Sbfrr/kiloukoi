@@ -37,7 +37,7 @@
           <li><%= link_to 'Log In', new_user_session_path %></li>
           <li><%= link_to 'New', new_item_path %></li>
           <% if user_signed_in? %>
-            <%= current_user.email %>
+            <%= current_user.firstname %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete %>
           <% end %>
         </ul>

@@ -1,10 +1,10 @@
-<h2>Créer un compte</h2>
+<h2>Create an acount</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :name %><br />
-  <%= f.text_field :name %></div>
+  <div><%= f.label :firstname %><br />
+  <%= f.text_field :firstname %></div>
 
   <div><%= f.label :lastname %><br />
   <%= f.text_field :lastname %></div>
