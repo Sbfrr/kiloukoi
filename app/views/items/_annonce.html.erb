@@ -1,39 +1,37 @@
-<div class="col-sm-12 col-md-6 col-xs-12">
-  <div class="thumbnail">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="item active">
-          <%= image_tag("1.jpeg", class: "annonce") %>
-        </div>
-        <div class="item">
-          <%= image_tag("2.jpeg", class: "annonce") %>
-        </div>
-        <div class="item">
-          <%= image_tag("3.jpeg", class: "annonce") %>
-        </div>
+<div class="margin_picture col-sm-12 col-md-6 col-xs-12 ">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <%= image_tag("1.jpeg", class: "annonce") %>
       </div>
-
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
-      <div class="col-sm-8 col-md-8 col-xs-8 bg-primary">
-        <div class="caption">
-          <p class= "white">Appartement 4 pièces</p>
-          <p class= "white">Caen</p>
-        </div>
+      <div class="item">
+        <%= image_tag("2.jpeg", class: "annonce") %>
       </div>
-      <div class="col-sm-4 col-md-4 col-xs-4 bg-primary">
-        <div class="caption text-center">
-          <p class= "white">30€</p>
-          <p class= "white">par jour</p>
-        </div>
+      <div class="item">
+        <%= image_tag("3.jpeg", class: "annonce") %>
       </div>
     </div>
+
+    <div class="col-sm-8 col-md-8 col-xs-8 bg-primary">
+      <div class="caption">
+        <p class= "white">Appartement 4 pièces</p>
+        <p class= "white">Caen</p>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-4 col-xs-4 bg-primary">
+      <div class="caption text-center">
+        <p class= "white">30€</p>
+        <p class= "white">par jour</p>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
   </div>
 </div>
