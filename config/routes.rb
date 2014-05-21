@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
   root 'items#index'
-  resources :items
-  resources :pictures
+
+  resources :items do
+    resources :pictures, only: [:destroy, :create]
+    get 'pictures/edit' => 'pictures#edit'
+  end
+
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
