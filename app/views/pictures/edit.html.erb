@@ -1,0 +1,6 @@
+<%= form_for @item, :html => { :multipart => true}, remote: true do |f| %>
+
+  <div class="form-group">
+    <%= f.label :file, 'picture', class: "control-label" %>
+    <%= f.file_field :file, class: "form-control", placeholder: "Localisation" %>
+  </div>
