@@ -1,4 +1,6 @@
 class PicturesController < ApplicationController
+  before_action :set_item, only: [:edit, :update]
+
   def destroy
     Picture.find(params[:id]).destroy!
   end
