@@ -1,20 +1,22 @@
 class PicturesController < ApplicationController
-  before_action :set_item, only: [:edit, :update]
+  before_action :set_item, only: [:edit, :create]
+   respond_to :js, :html
 
   def destroy
     Picture.find(params[:id]).destroy!
+    render json: { status: 'OK' }
   end
 
   def edit
-    @item.pictures.create(picture_params)
+    @picture = Picture.new
   end
 
-  def update
+  def create
     @item.pictures.create(picture_params)
 
     respond_with do |format|
       format.js
-      format.html { redirect_to flat_path(flat)}
+      format.html { redirect_to item_path(item)}
     end
   end
 
@@ -25,7 +27,7 @@ class PicturesController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(params[:id])
+    @item = Item.find(params[:item_id])
   end
 
 end

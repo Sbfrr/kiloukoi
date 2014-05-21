@@ -1,4 +1,4 @@
-<%= form_for @item, :html => { :multipart => true}, remote: true do |f| %>
+<%= form_for [@item , @picture] , :html => { :multipart => true}, remote: true do |f| %>
 
   <div id='picture-container'>
    <%= render partial: 'pictures' %>
@@ -6,12 +6,11 @@
 
   <div class="form-group">
     <%= f.label :file, 'picture', class: "control-label" %>
-    <%= f.file_field :file, class: "form-control", placeholder: "Localisation" %>
   </div>
 
   <div class="fileUpload btn btn-primary">
     <span>Upload</span>
-    <input type="file" class="upload" />
+    <input type="file" class="upload" name="item[file]" />
   </div>
 
 <% end %>

@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
  before_action :set_item, only: [:show, :edit, :update, :destroy]
- before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+ #before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
  respond_to :js, :html
 
   def index
@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
 
   def create
     item = Item.create(item_params)
-    redirect_to item_path(item)
+    redirect_to item_pictures_edit_path(item)
   end
 
   def edit

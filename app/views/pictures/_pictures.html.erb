@@ -1,7 +1,7 @@
   <% @item.pictures.each do |picture|%>
-  <fieldset>
-    <%= image_tag picture.file.url(:thumb) %>
-    <%= link_to "Delete", picture_path(picture), class: 'delete-picture', method: :delete, remote: true %>
-  </fieldset>
+    <fieldset>
+      <%= image_tag picture.file.url(:thumb) %>
+      <%= link_to "Delete", item_picture_path(item_id: @item.id, id: picture.id), class: 'delete-picture', method: :delete, remote: true %>
+    </fieldset>
   <% end %>
-  
+
