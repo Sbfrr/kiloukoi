@@ -4,11 +4,13 @@
 
 <div class="col-md-7 col-md-offset-5 ">
   <div class="col-sm-12 col-md-12 col-xs-12">
-    <form class="navbar-form navbar-left" role="search">
-      <div class="form-group ">
-        <input type="text" class="form-control" id="button_loc" placeholder="Localisation">
+    <form class="form-inline" id="button_loc" role="search">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Location">
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button">Search</button>
+        </span>
       </div>
-      <button type="submit" class="btn btn-primary col-xs-offset-3 col-sm-offset-2 col-md-offset-0" id="button_loc_valide">Valider</button>
     </form>
   </div>
 
@@ -39,39 +41,6 @@
     <%= render 'items/annonce' %>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="row">
-  <div class="col-md-5 visible-lg visible-md">
-    <%= image_tag("carte.png", class: "carte") %>
-  </div>
-  <div class="col-md7 text-center">
-    <form class="navbar-form navbar-left thumbnail" role="location">
-      <div class="form-group">
-        <label for="location"> Entrez une localisation : </label>
-        <input type="text" class="form-control" placeholder="Localisation">
-      </div>
-      <button type="submit" class="btn btn-default">Je valide</button>
-    </form>
-  </div>
-  <div class=" col-md-6 col-md-offset-5 col-sm-6 col-sm-offset-7 col-xs-8 col-xs-offset-7">
-    <div class="thumbnail col-sm-6 col-md-6 col-xs-12">
-      titre
-    </div>
-  </div>
-
--->
-
 
 
 
