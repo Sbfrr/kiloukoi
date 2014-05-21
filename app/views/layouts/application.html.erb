@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 <head>
   <title>Kiloukoi</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -37,7 +39,11 @@
           <li>
             <a href="#">Connexion</a>
           </li>
-          <li><%= link_to 'New', new_item_path %></li>
+          <li><%= link_to 'Nouvelle annonce', new_item_path %></li>
+          <% if user_signed_in? %>
+            <%= current_user.email %>
+            <%= link_to "Log out", destroy_user_session_path(:user), method: :delete %>
+          <% end %>
         </ul>
       </div>
   </nav>
