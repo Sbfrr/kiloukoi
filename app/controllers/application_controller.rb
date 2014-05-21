@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    %w(firstname lastname birthdate email).each do |field|
+    %w(firstname lastname birthdate address zipcode city email).each do |field|
       devise_parameter_sanitizer.for(:sign_up) << field.to_sym
     end
   end
