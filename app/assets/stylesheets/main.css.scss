@@ -1,3 +1,5 @@
+/* Navbar */
+
 .logo {
   font-family: HoboStd;
   font-size: 32px;
@@ -15,10 +17,20 @@
   margin-top: 50px;
 }
 
+/* Carte */
+
 .carte{
   width: inherit;
   position: fixed;
 }
+
+/* Button search */
+
+#button_loc{
+  margin-bottom: 5px;
+}
+
+/* picture */
 
 .annonce{
   width: 100%;
@@ -27,15 +39,6 @@
 
 .white{
   color: white;
-}
-
-#button_loc{
-  margin: 5px;
-  width: 96%;
-}
-
-#button_loc_valide{
-  width: 50%;
 }
 
 /* Extra small devices (phones, less than 768px) */
