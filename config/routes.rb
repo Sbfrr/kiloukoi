@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root 'items#index'
 
   resources :items do
-    resources :pictures
+    get 'pictures/edit' => 'pictures#edit'
+    post 'pictures/edit' => 'pictures#update'
   end
 
   devise_for :users
