@@ -35,11 +35,12 @@
         <ul class="nav navbar-nav navbar-right align-nav">
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
           <li><%= link_to 'Log In', new_user_session_path %></li>
-          <li><%= link_to 'New', new_item_path %></li>
-          <% if user_signed_in? %>
+          <li><%= link_to 'New Announce', new_item_path %></li>
+          <li><% if user_signed_in? %>
             <%= current_user.firstname %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete %>
           <% end %>
+          </li>
         </ul>
       </div>
   </nav>

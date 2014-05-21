@@ -1,0 +1,16 @@
+<%= form_for [@item , @picture] , :html => { :multipart => true}, remote: true do |f| %>
+
+  <div id='picture-container'>
+   <%= render partial: 'pictures' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :file, 'picture', class: "control-label" %>
+  </div>
+
+  <div class="fileUpload btn btn-primary">
+    <span>Upload</span>
+    <input type="file" class="upload" name="item[file]" />
+  </div>
+
+<% end %>
