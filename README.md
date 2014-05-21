@@ -1,6 +1,6 @@
 # Kiloukoi - Rent anything from anyone !
 
-This project has an educational purpose. It was set up and developed by three students from [le Wagon's](http://www.lewagon.org) bootcamp : [Baptiste Hamain](), [Vincent Porquet]() and [Sébastien Ferré](http://github.com/Sbfrr).
+This project has an educational purpose. It was set up and developed by three students from [le Wagon's](http://www.lewagon.org) bootcamp : [Baptiste Hamain](http://github.com/BaptisteHamain), [Vincent Porquet](http://github.com/vincentporquet) and [Sébastien Ferré](http://github.com/Sbfrr).
 
 This project was largely inspired by [AirBnB](https://www.airbnb.fr/) website.
 
