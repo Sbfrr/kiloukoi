@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'bookings/new'
+
+  get 'bookings/create'
+
+  get 'bookings/destroy'
+
   root 'items#index'
 
   resources :items do
