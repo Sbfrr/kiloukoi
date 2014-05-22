@@ -31,9 +31,8 @@
         <tr>
           <td>Arrival</td>
           <td>Departure</td>
-          <td>Length</td>
+          <td>Item</td>
           <td>Total price</td>
-          <td></td>
         </tr>
       </thead>
       <tbody>
@@ -41,7 +40,8 @@
         <tr>
          <td><%= booking.arrival %></td>
          <td><%= booking.departure %></td>
-         <td><%= booking.item %></td>
+         <td><%= booking.item.title %></td>
+         <td><%= booking.price %></td>
         </tr>
       <% end %>
       </tbody>

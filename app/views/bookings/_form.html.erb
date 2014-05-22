@@ -7,13 +7,10 @@
 
    <div class="form-group">
     <%= f.label :departure, 'Departure', class: "control-label" %>
-    <%= f.date_field :departure, value: :arrival %>
+    <%= f.date_field :departure %>
   </div>
 
-    <% f.text_field :user_id, value: current_user %>
-
-    <% f.text_field :item_id, value: item_id %>
-
+    <%= f.hidden_field :item_id, value: item_id %>
 
   <%= f.submit "Book this item", class: "btn btn-primary" %>
 

@@ -3,7 +3,9 @@ class BookingsController < ApplicationController
  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def create
-    current_user.bookings.create(booking_params)
+    booking = current_user.bookings.create(booking_params)
+    stay_length = (booking.departure - booking.arrival).to_i
+    booking.price = stay_length * booking.item.price
     redirect_to profile_path
   end
 
@@ -22,7 +24,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    @booking_params = params.require(:booking).permit(:price, :user_id, :item_id, :arrival, :departure)
+    @booking_params = params.require(:booking).permit(:item_id, :arrival, :departure)
   end
 
   def set_booking
