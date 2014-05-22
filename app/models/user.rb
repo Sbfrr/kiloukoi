@@ -4,7 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates :firstname, :lastname, :address, :zipcode, :city, presence: true
+
   has_many :items
+
+
 
 
 end
