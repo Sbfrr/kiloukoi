@@ -2,8 +2,10 @@
 
 
 <% @item.pictures.each do |picture|%>
-<%= image_tag picture.file.url(:medium) %>
+<%= image_tag picture.file.url(:thumb) %>
 <% end %>
+
+<%= render 'bookings/form', locals: {item_id: params[:id]} %>
 
 
 
