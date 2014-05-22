@@ -12,6 +12,8 @@
     <%= f.text_field :price, class: "form-control", placeholder: "Prix" %>
   </div>
 
+  <% f.text_field :user_id, value: current_user %>
+
   <%= f.submit "Submit", class: "btn btn-primary" %>
 
 <% end %>
