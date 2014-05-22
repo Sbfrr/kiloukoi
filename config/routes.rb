@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'bookings/new'
-
-  get 'bookings/create'
-
-  get 'bookings/destroy'
+  resources :bookings, except: [:index]
 
   root 'items#index'
 
