@@ -2,7 +2,7 @@
   <div class="col-sm-12 col-md-6 col-xs-12">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Wrapper for slides -->
-      <div class="carousel-inner margin_picture" id="fix_width">
+      <div class="carousel-inner" id="fix_width">
         <% item.pictures.each_with_index do |picture, index| %>
           <div class="item <%= index == 0 ? 'active' : nil %>">
             <%= image_tag picture.file.url(:medium) %>
