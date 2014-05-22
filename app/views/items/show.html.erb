@@ -30,6 +30,7 @@
 
   <div class="col-md-3 pull-right">
     <h2>Owner</h2>
+    <%= @item.user %>
   </div>
 
 </div>
@@ -42,8 +43,10 @@
   </div>
 
   <div class="col-md-3 pull-right">
-    <h2>Booking</h2>
-    <%= render 'bookings/form', {item_id: params[:id]} %>
+    <section class="booking">
+      <h2>Booking</h2>
+      <%= render 'bookings/form', {item_id: params[:id]} %>
+    </section>
   </div>
 
 </div>
