@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -20,12 +21,11 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
+
   end
 
   def update
     @item.update(item_params)
-
   end
 
   def destroy
@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
 private
 
   def item_params
-    @item_params = params.require(:item).permit(:price, :description, :title)
+    @item_params = params.require(:item).permit(:price, :description, :title, :user_id)
   end
 
   def set_item

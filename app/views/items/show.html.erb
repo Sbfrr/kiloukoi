@@ -1,9 +1,54 @@
-<h1>Le titre de mon annonce est : <%= @item.title %></h1>
+<div class="row">
+  <div class="col-md-12"><h1><%= @item.title %></h1></div>
+</div>
+
+<div class="row">
+
+  <div class="col-md-8">
+    <h2>Pictures</h2>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <% @item.pictures.each do |picture|%>
+          <div class="item">
+            <%= image_tag picture.file.url(:medium) %>
+          </div>
+        <% end %>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="col-md-3 pull-right">
+    <h2>Owner</h2>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-md-8">
+    <h2>Description</h2>
+    <!-- -->
+  </div>
+
+  <div class="col-md-3 pull-right">
+    <h2>Booking</h2>
+    <%= render 'bookings/form', {item_id: params[:id]} %>
+  </div>
+
+</div>
 
 
-<% @item.pictures.each do |picture|%>
-<%= image_tag picture.file.url(:medium) %>
-<% end %>
 
 
 

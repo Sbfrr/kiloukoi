@@ -1,0 +1,20 @@
+<%= form_for @booking do |f| %>
+
+  <div class="form-group">
+    <%= f.label :arrival, 'Arrival', class: "control-label" %>
+    <%= f.date_field :arrival, value: Date.today, class: "control-label" %>
+  </div>
+
+   <div class="form-group">
+    <%= f.label :departure, 'Departure', class: "control-label" %>
+    <%= f.date_field :departure, value: :arrival %>
+  </div>
+
+    <% f.text_field :user_id, value: current_user %>
+
+    <% f.text_field :item_id, value: item_id %>
+
+
+  <%= f.submit "Book this item", class: "btn btn-primary" %>
+
+<% end %>

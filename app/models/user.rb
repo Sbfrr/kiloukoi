@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   validates :firstname, :lastname, :address, :zipcode, :city, presence: true
 
   has_many :items
+  has_many :bookings
 
 
 
