@@ -1,37 +1,32 @@
-<div class="margin_picture col-sm-12 col-md-6 col-xs-12 ">
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <%= image_tag("1.jpeg", class: "annonce") %>
-      </div>
-      <div class="item">
-        <%= image_tag("2.jpeg", class: "annonce") %>
-      </div>
-      <div class="item">
-        <%= image_tag("3.jpeg", class: "annonce") %>
+<%= link_to item_path (item) do %>
+  <div class="col-sm-12 col-md-6 col-xs-12">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner margin_picture" id="fix_width">
+        <% item.pictures.each_with_index do |picture, index| %>
+          <div class="item <%= index == 0 ? 'active' : nil %>">
+            <%= image_tag picture.file.url(:medium) %>
+          </div>
+        <% end %>
       </div>
     </div>
 
     <div class="col-sm-8 col-md-8 col-xs-8 bg-primary">
-      <div class="caption">
-        <p class= "white">Appartement 4 pièces</p>
-        <p class= "white">Caen</p>
-      </div>
+      <p><%= item.title %></p>
+      <p><%= item.user.city %></p>
     </div>
-    <div class="col-sm-4 col-md-4 col-xs-4 bg-primary">
-      <div class="caption text-center">
-        <p class= "white">30€</p>
-        <p class= "white">par jour</p>
-      </div>
+    <div class="col-sm-4 col-md-4 col-xs-4 bg-primary text-center">
+      <p><%= item.price %><%=' €'%></p>
+      <p><%= 'Par jour' %></p>
     </div>
 
-    <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
+      <!-- Controls
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a> -->
   </div>
-</div>
+
+<% end %>
