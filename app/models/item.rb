@@ -1,4 +1,5 @@
 class Item < ActiveRecord::Base
-  has_many :pictures
   belongs_to :user
+  has_many :pictures
+  has_many :bookings
 end
