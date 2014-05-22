@@ -11,7 +11,7 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <% @item.pictures.each do |picture|%>
-          <div class="item active">
+          <div class="item">
             <%= image_tag picture.file.url(:medium) %>
           </div>
         <% end %>
@@ -38,8 +38,7 @@
 
   <div class="col-md-8">
     <h2>Description</h2>
-    <p><%= @item.user.first_name %></p>
-    <p><%= @item.user.last_name %></p>
+    <!-- -->
   </div>
 
   <div class="col-md-3 pull-right">
