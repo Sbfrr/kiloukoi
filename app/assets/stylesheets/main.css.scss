@@ -1,7 +1,7 @@
 /* Navbar */
 
 .logo {
-  font-family: HoboStd;
+  font-family: Calibri;
   font-size: 32px;
   color: #0EA2E1;
   line-height: 40px;
@@ -14,13 +14,13 @@
 }
 
 .align-body{
-  margin-top: 50px;
+  margin-top: 75px;
 }
 
 /* Carte */
 
 .carte{
-  width: inherit;
+  width: 35%;
   position: fixed;
 }
 
@@ -32,17 +32,24 @@
 
 /* picture */
 
-.annonce{
-  width: 100%;
+#fix_width{
+  width: 300px;
+  height: 200px;
+}
+
+.fix_width1{
+  width: 300px;
 }
 
 .margin_picture{
-  margin-bottom: 30px;
+  margin: 17px 0 0 0;
 }
 
 .white{
   color: white;
 }
+
+
 
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */

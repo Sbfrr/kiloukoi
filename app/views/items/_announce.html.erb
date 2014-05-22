@@ -1,0 +1,32 @@
+<%= link_to item_path (item) do %>
+  <div class="col-sm-12 col-md-6 col-xs-12">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner margin_picture" id="fix_width">
+        <% item.pictures.each_with_index do |picture, index| %>
+          <div class="item <%= index == 0 ? 'active' : nil %>">
+            <%= image_tag picture.file.url(:medium) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-sm-8 col-md-8 col-xs-8 bg-primary">
+      <p><%= item.title %></p>
+      <p><%= item.user.city %></p>
+    </div>
+    <div class="col-sm-4 col-md-4 col-xs-4 bg-primary text-center">
+      <p><%= item.price %><%=' €'%></p>
+      <p><%= 'Par jour' %></p>
+    </div>
+
+      <!-- Controls
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a> -->
+  </div>
+
+<% end %>
