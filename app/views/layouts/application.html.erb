@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% if notice %><p class="notice"><%= notice %></p><%end%>
+  <% if alert %><p class="alert"><%= alert %></p><%end%>
 <head>
   <title>Kiloukoi</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -31,18 +31,26 @@
       <div class="navbar-header logo">
         <a><%= link_to 'KILOUKOI', root_path %></a>
       </div>
+
+      <% if user_signed_in? %>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right align-nav">
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Log In', new_user_session_path %></li>
+          <li><%= link_to current_user.firstname, profile_path %></li>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
           <li><%= link_to 'New Announce', new_item_path %></li>
-          <li><% if user_signed_in? %>
-            <%= current_user.firstname %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-          <% end %>
-          </li>
         </ul>
       </div>
+
+      <% else %>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right align-nav">
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <li><%= link_to 'Log In', new_user_session_path %></li>
+            <li><%= link_to 'New Announce', new_item_path %></li>
+          </ul>
+        </div>
+      <% end %>
+
   </nav>
 </header>
 
