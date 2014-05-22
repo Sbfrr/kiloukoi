@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :bookings, except: [:index]
-
   root 'items#index'
 
   resources :items do
     resources :pictures, only: [:destroy, :create, :index]
   end
+
+  resources :bookings, except: [:index]
 
   devise_for :users
 
