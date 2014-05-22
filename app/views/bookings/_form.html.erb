@@ -10,7 +10,11 @@
     <%= f.date_field :departure, value: :arrival %>
   </div>
 
+    <% f.text_field :user_id, value: current_user %>
 
-  <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% f.text_field :item_id, value: item_id %>
+
+
+  <%= f.submit "Book this item", class: "btn btn-primary" %>
 
 <% end %>

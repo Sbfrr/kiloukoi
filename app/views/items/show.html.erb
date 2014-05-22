@@ -5,7 +5,7 @@
 <%= image_tag picture.file.url(:thumb) %>
 <% end %>
 
-<%= render 'bookings/form', locals: {item_id: params[:id]} %>
+<%= render 'bookings/form', {item_id: params[:id]} %>
 
 
 
