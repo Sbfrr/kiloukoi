@@ -1,1 +1,6 @@
 <h1>Your Profil</h1>
+
+<h2><%= current_user.firstname.capitalize %> <%= current_user.lastname.capitalize %></h2>
+<%= link_to edit_profile_path do %>
+  <button class="btn btn-primary">Edit</button>
+<% end %>
