@@ -4,6 +4,15 @@
 
   <%= form_for current_user, url: profile_path do |f| %>
 
+  <% unless current_user.errors.blank? %>
+    <ul>
+      <% current_user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+
   <div class="form-group">
     <%= f.label :firstname, 'Firstname', class: "control-label" %><br />
     <%= f.text_field :firstname, class: "form-control", placeholder: "Firstname", autofocus: true %>
