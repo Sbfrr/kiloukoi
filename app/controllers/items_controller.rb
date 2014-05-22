@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
 
   def create
     item = current_user.items.create(item_params)
-    redirect_to item_pictures_edit_path(item)
+    redirect_to item_pictures_path(item)
   end
 
   def edit

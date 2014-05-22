@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_item, only: [:edit, :create]
+  before_action :set_item, only: [:index, :create]
    respond_to :js, :html
 
   def destroy
@@ -7,12 +7,13 @@ class PicturesController < ApplicationController
     render json: { status: 'OK' }
   end
 
-  def edit
+  def index
     @picture = Picture.new
   end
 
   def create
     @item.pictures.create(picture_params)
+    puts params
 
     respond_with do |format|
       format.js
