@@ -6,7 +6,6 @@ class BookingsController < ApplicationController
     booking = current_user.bookings.create(booking_params)
     stay_length = (booking.departure - booking.arrival).to_i
     booking.price = stay_length * booking.item.price
-    abc
     redirect_to profile_path
   end
 
