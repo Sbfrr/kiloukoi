@@ -1,52 +1,60 @@
-<div class="row">
-  <div class="col-md-12"><h1><%= @item.title %></h1></div>
-</div>
+
 
 <div class="row">
-
-  <div class="col-md-8">
-    <h2>Pictures</h2>
+  <div class="col-md-4">
+    <h1><%= @item.title %></h1>
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
       <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <% @item.pictures.each do |picture|%>
-          <div class="item">
-            <%= image_tag picture.file.url(:medium) %>
+      <div class="carousel-inner" id="fix_width">
+        <% @item.pictures.each_with_index do |picture, index| %>
+          <div class="item <%= index == 0 ? 'active' : nil %> <%= "item#{index}"%>">
+            <%= image_tag picture.file.url(:medium)%>
           </div>
         <% end %>
       </div>
-
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
-
     </div>
   </div>
 
-  <div class="col-md-3 pull-right">
+  <div class="col-md-3 marg-bottom">
+      <% @item.pictures.each_with_index do |picture, index| %>
+        <%= image_tag picture.file.url(:thumb), class: "img-thumbnail margin-thumb trigger-#{index}", id: "nopadding" %>
+      <% end %>
+  </div>
+
+  <script>
+    $(function(){
+      $(".trigger-0").click(function(){
+        $(".active").removeClass("active");
+        $(".item-0").addClass("active");
+      });
+    })
+  </script>
+
+
+  <div class="col-md-4 pull-right">
     <h2>Owner</h2>
-    <%= @item.user %>
+    <p><%= current_user.firstname.capitalize %> <%= current_user.lastname.capitalize %></p>
+    <p><%= 'From '%> <%= current_user.city %><p>
   </div>
 
 </div>
 
 <div class="row">
 
-  <div class="col-md-8">
+  <div class="col-md-4">
     <h2>Description</h2>
-    <!-- -->
+    <p><%= @item.description %><p>
   </div>
+
 
   <div class="col-md-3 pull-right">
     <section class="booking">
       <h2>Booking</h2>
       <%= render 'bookings/form', {item_id: params[:id]} %>
     </section>
+
+  <div class="col-md-4 pull-right">
+
   </div>
 
 </div>
