@@ -29,7 +29,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use Figaro and paperclip to upload images via AWS3
-gem 'figaro'
+gem 'figaro', '1.0.0.rc1'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk'
 
