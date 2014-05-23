@@ -1,8 +1,17 @@
+<div class="row">
+  <div class="col-md-4">
+    <h2><%= @item.title %></h2>
+  </div>
+
+  <div class="col-md-4 pull-right">
+    <h2>Owner</h2>
+  </div>
+
+</div>
 
 
 <div class="row">
   <div class="col-md-4">
-    <h1><%= @item.title %></h1>
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Wrapper for slides -->
       <div class="carousel-inner" id="fix_width">
@@ -25,14 +34,24 @@
     $(function(){
       $(".trigger-0").click(function(){
         $(".active").removeClass("active");
-        $(".item-0").addClass("active");
+        $(".item0").addClass("active");
+      });
+      $(".trigger-1").click(function(){
+        $(".active").removeClass("active");
+        $(".item1").addClass("active");
+      });
+      $(".trigger-2").click(function(){
+        $(".active").removeClass("active");
+        $(".item2").addClass("active");
+      });
+      $(".trigger-3").click(function(){
+        $(".active").removeClass("active");
+        $(".item3").addClass("active");
       });
     })
   </script>
 
-
   <div class="col-md-4 pull-right">
-    <h2>Owner</h2>
     <p><%= current_user.firstname.capitalize %> <%= current_user.lastname.capitalize %></p>
     <p><%= 'From '%> <%= current_user.city %><p>
   </div>
@@ -47,14 +66,11 @@
   </div>
 
 
-  <div class="col-md-3 pull-right">
+  <div class="col-md-4 pull-right">
     <section class="booking">
       <h2>Booking</h2>
       <%= render 'bookings/form', {item_id: params[:id]} %>
     </section>
-
-  <div class="col-md-4 pull-right">
-
   </div>
 
 </div>
