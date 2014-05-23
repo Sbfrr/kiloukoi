@@ -10,8 +10,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get "profile" => "users#show", as: "profile"
-  get "profile/edit" => "users#edit", as: "edit_profile"
-  patch "profile" => "users#update"
+  get "profile" => "profile#show", as: "profile"
+  get "profile/edit" => "profile#edit", as: "edit_profile"
+  patch "profile" => "profile#update"
 
 end
